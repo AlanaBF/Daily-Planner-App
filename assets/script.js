@@ -13,22 +13,42 @@ setInterval(displayTime, 1000);
 
 
 // * Color-codes each timeblock based on past, present, and future when the timeblock is viewed.
-function setColorCode () {
-var rowHour = $('.hour')
-var currentHour = parseInt(moment().format('HH'));    
+
+
+var currentHour = parseInt(moment().format('HH'));  
+var row = document.getElementsByClass(".row");
+
+$('.hour').each(function() {
+  var  rowHour = parseInt(
+    $(this)
+    .attr('id')
+  );
+  
+  // COLOR CHANGING FUNCTION 
+function setColorCode() {
+  
     if (rowHour) {
       // Compares row id to current hour and sets color accordingly
       if (currentHour === rowHour) {
-        setColor('<tr>', "#ff6961");
+        setColor(row, "red");
+        console.log('red');
       } else if ((currentHour < rowHour)) {
-        setColor('<tr>', "#d3d3d3");
+        setColor(row, "white");
+        console.log('white');
       } else if ((currentHour > rowHour)) {
-        setColor('<tr>', "#77dd77");
+        setColor(row, "green");
+        console.log('green');
       } 
-    }
+   
 }
+}
+setColorCode();
+});
+ 
+function setColor(element, color) {
+element.style.backgroundColor = color;
+};
 
-$('setColor').append("<tr>");
 
 
 // * Allows a user to enter an event when they click a timeblock

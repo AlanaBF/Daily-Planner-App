@@ -1,91 +1,94 @@
 <!DOCTYPE html>
 <html lang="en-gb">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-    </header>
-    <div class="container" >
-      <!-- Timeblocks go here -->
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <tr>
-              <td class="hour" style="width: 10%">09:00</td>
-              <td class="description" style="width: 80%"></td>
-              <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i class="far fa-save"></i></button></td>
-            </tr>
-            <tr>
-              <td class="hour" style="width: 10%">10:00</td>
-              <td class="description" style="width: 80%"></td>
-              <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i class="far fa-save"></i></button></td>
-            </tr>
-            <tr>
-              <td class="hour" style="width: 10%">11:00</td>
-              <td class="description" style="width: 80%"></td>
-              <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i class="far fa-save"></i></button></td>
-            </tr>
-            <tr>
-              <td class="hour" style="width: 10%">12:00</td>
-              <td class="description" style="width: 80%" id="scheduleInput"></td>
-              <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i class="far fa-save"></i></button></td>
-            </tr>
-            <tr>
-              <td class="hour" style="width: 10%">13:00</td>
-              <td class="description" style="width: 80%"></td>
-              <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i class="far fa-save"></i></button></td>
-            </tr>
-            <tr>
-              <td class="hour" style="width: 10%">14:00</td>
-              <td class="description" style="width: 80%"></td>
-              <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i class="far fa-save"></i></button></td>
-            </tr>
-            <tr>
-              <td class="hour" style="width: 10%">15:00</td>
-              <td class="description" style="width: 80%"></td>
-              <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i class="far fa-save"></i></button></td>
-            </tr>
-            <tr>
-              <td class="hour" style="width: 10%">16:00</td>
-              <td class="description" style="width: 80%"></td>
-              <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i class="far fa-save"></i></button></td>
-            </tr>
-            <tr>
-              <td class="hour" style="width: 10%">17:00</td>
-              <td class="description" style="width: 80%"></td>
-              <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i class="far fa-save"></i></button></td>
-            </tr>
-          </tr>
-        </tbody>
-      </table>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <title>Work Day Scheduler</title>
+</head>
 
-    </div>
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+  <div class="container">
+    <!-- Timeblocks go here -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script type="text/javascript" src="./assets/index.js"></script>
-  </body>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+        <tr>
+          <td class="hour" id="9" style="width: 10%">09:00</td>
+          <td class="description" style="width: 80%"></td>
+          <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i
+                class="far fa-save"></i></button></td>
+        </tr>
+        <tr>
+          <td class="hour" id="10" style="width: 10%">10:00</td>
+          <td class="description" style="width: 80%"></td>
+          <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i
+                class="far fa-save"></i></button></td>
+        </tr>
+        <tr>
+          <td class="hour" id="11" style="width: 10%">11:00</td>
+          <td class="description" style="width: 80%"></td>
+          <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i
+                class="far fa-save"></i></button></td>
+        </tr>
+        <tr>
+          <td class="hour" id="12" style="width: 10%">12:00</td>
+          <td class="description" style="width: 80%" id="scheduleInput"></td>
+          <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i
+                class="far fa-save"></i></button></td>
+        </tr>
+        <tr>
+          <td class="hour" id="13" style="width: 10%">13:00</td>
+          <td class="description" style="width: 80%"></td>
+          <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i
+                class="far fa-save"></i></button></td>
+        </tr>
+        <tr>
+          <td class="hour" id="14" style="width: 10%">14:00</td>
+          <td class="description" style="width: 80%"></td>
+          <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i
+                class="far fa-save"></i></button></td>
+        </tr>
+        <tr>
+          <td class="hour" id="15" style="width: 10%">15:00</td>
+          <td class="description" style="width: 80%"></td>
+          <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i
+                class="far fa-save"></i></button></td>
+        </tr>
+        <tr>
+          <td class="hour" id="16" style="width: 10%">16:00</td>
+          <td class="description" style="width: 80%"></td>
+          <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i
+                class="far fa-save"></i></button></td>
+        </tr>
+        <tr>
+          <td class="hour" id="17" style="width: 10%">17:00</td>
+          <td class="description" style="width: 80%"></td>
+          <td style="width: 10%"><button style="width: 100%" style="height: 100%" class="saveBtn"><i
+                class="far fa-save"></i></button></td>
+        </tr>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script type="text/javascript" src="./assets/script.js"></script>
+</body>
+
 </html>
