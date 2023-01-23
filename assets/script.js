@@ -1,63 +1,57 @@
 // * Displays the current day at the top of the calender when a user opens the planner.
 var timeDisplayEl = $('#currentDay');
-
-
 function displayTime() {
     var rightNow = moment().format('dddd MMMM Do, YYYY [at] HH:mm:ss');
     timeDisplayEl.text(rightNow);
 }
 setInterval(displayTime, 1000);
 
-// * Presents timeblocks for standard business hours when the user scrolls down.
-
-
-
 // * Color-codes each timeblock based on past, present, and future when the timeblock is viewed.
 
-
 var currentHour = parseInt(moment().format('HH'));  
-var row = document.getElementsByClass(".row");
-
+console.log(currentHour);
+// function to run through each time id attribute
 $('.hour').each(function() {
   var  rowHour = parseInt(
     $(this)
     .attr('id')
   );
-  
-  // COLOR CHANGING FUNCTION 
+// function to set the colour code dependent on whether the current days time for the hour block is in the past, now, or in the future
 function setColorCode() {
-  
-    if (rowHour) {
-      // Compares row id to current hour and sets color accordingly
-      if (currentHour === rowHour) {
-        setColor(row, "red");
-        console.log('red');
-      } else if ((currentHour < rowHour)) {
-        setColor(row, "white");
-        console.log('white');
-      } else if ((currentHour > rowHour)) {
-        setColor(row, "green");
-        console.log('green');
-      } 
-   
-}
-}
+  var textBox = document.querySelector(".description");
+console.log(rowHour);
+// if the current hour is greater than the row hour in the planner it sets the colour to grey, in the past
+    if (currentHour > rowHour) {
+      // this adds the attribute of class and past
+textBox.setAttribute("class", "past");
+    }
+    // if the current hour matches the row hour then the colour is set to red, present
+    else if (currentHour === rowHour) {
+      // this removes the attribute of class and past
+      textBox.classList.remove("past")
+      // and adds the attribute of class and present
+      textBox.setAttribute("class", "present");
+    }
+    // if the current hour is less than the row hour then the colour is set to green, in the future
+    else if (currentHour < rowHour) {
+      // this removes the attribute of class and present
+      textBox.classList.remove("present");
+      // and sets the attribute of class and future
+      textBox.setAttribute("class", "future");
+    }
+    }
+    // this calls for the function of set colour code to be actioned
 setColorCode();
 });
- 
-function setColor(element, color) {
-element.style.backgroundColor = color;
-};
-
-
 
 // * Allows a user to enter an event when they click a timeblock
-// function printScheduleData() {
-//     var scheduleTimeEl = $('.hour');
-//     var scheduleDescription = $('.description');
 
+function printScheduleData() {
+   
+    var scheduleTime = $('.hour');
+    var scheduleDescription = $('.description');
 
-// }
+ }
 
 // var scheduleEvents = {
    
