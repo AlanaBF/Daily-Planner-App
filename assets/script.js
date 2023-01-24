@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 // * Displays the current day at the top of the calender when a user opens the planner.
 var timeDisplayEl = $('#currentDay');
 function displayTime() {
@@ -28,7 +30,7 @@ textBox.setAttribute("class", "past");
     // if the current hour matches the row hour then the colour is set to red, present
     else if (currentHour === rowHour) {
       // this removes the attribute of class and past
-      textBox.classList.remove("past")
+      textBox.classList.remove("past");
       // and adds the attribute of class and present
       textBox.setAttribute("class", "present");
     }
@@ -45,11 +47,19 @@ setColorCode();
 });
 
 // * Allows a user to enter an event when they click a timeblock
-
-
+    
 
 // * Saves the event in local storage when the save button is clicked in that timeblock.
-  
+
+// assign saveBtn event listener
+$("saveBtn").on("click", function() {
+  var text = localStorage.getItem("#schedule");
+  var time = localStorage.getItem("#9");
+  window.localStorage.setItem("schedule", "9");
+})
+
 
 
 // * Persists events between refreshes of a page
+
+});
