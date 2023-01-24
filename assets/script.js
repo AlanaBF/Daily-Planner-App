@@ -46,17 +46,10 @@ setColorCode();
 
 // * Allows a user to enter an event when they click a timeblock
 
-function printScheduleData() {
-   
-    var scheduleTime = $('.hour');
-    var scheduleDescription = $('.description');
 
- }
 
-// var scheduleEvents = {
-   
-    
-// };
 // * Saves the event in local storage when the save button is clicked in that timeblock.
+  
+
 
 // * Persists events between refreshes of a page
