@@ -1,65 +1,68 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-// * Displays the current day at the top of the calender when a user opens the planner.
-var timeDisplayEl = $('#currentDay');
-function displayTime() {
+  // * Displays the current day at the top of the calender when a user opens the planner.
+  var timeDisplayEl = $('#currentDay');
+  function displayTime() {
     var rightNow = moment().format('dddd MMMM Do, YYYY [at] HH:mm:ss');
     timeDisplayEl.text(rightNow);
-}
-setInterval(displayTime, 1000);
+  }
+  setInterval(displayTime, 1000);
 
-// * Color-codes each timeblock based on past, present, and future when the timeblock is viewed.
+  // * Color-codes each timeblock based on past, present, and future when the timeblock is viewed.
 
-var currentHour = parseInt(moment().format('HH'));  
-console.log(currentHour);
-// function to run through each time id attribute
-$('.hour').each(function() {
-  var  rowHour = parseInt(
-    $(this)
-    .attr('id')
-  );
-// function to set the colour code dependent on whether the current days time for the hour block is in the past, now, or in the future
-function setColorCode() {
-  var textBox = document.querySelector(".description");
-console.log(rowHour);
-// if the current hour is greater than the row hour in the planner it sets the colour to grey, in the past
-    if (currentHour > rowHour) {
-      // this adds the attribute of class and past
-textBox.setAttribute("class", "past");
-    }
-    // if the current hour matches the row hour then the colour is set to red, present
-    else if (currentHour === rowHour) {
-      // this removes the attribute of class and past
-      textBox.classList.remove("past");
-      // and adds the attribute of class and present
-      textBox.setAttribute("class", "present");
-    }
-    // if the current hour is less than the row hour then the colour is set to green, in the future
-    else if (currentHour < rowHour) {
-      // this removes the attribute of class and present
-      textBox.classList.remove("present");
-      // and sets the attribute of class and future
-      textBox.setAttribute("class", "future");
-    }
+  var currentHour = parseInt(moment().format('HH'));
+  console.log(currentHour);
+  // function to run through each time id attribute
+  $('.hour').each(function () {
+    var rowHour = parseInt(
+      $(this)
+        .attr('id')
+    );
+    // function to set the colour code dependent on whether the current days time for the hour block is in the past, now, or in the future
+    function setColorCode() {
+      var textBox = document.querySelector(".description");
+      console.log(rowHour);
+      // if the current hour is greater than the row hour in the planner it sets the colour to grey, in the past
+      if (currentHour > rowHour) {
+        // this adds the attribute of class and past
+        textBox.setAttribute("class", "past");
+      }
+      // if the current hour matches the row hour then the colour is set to red, present
+      else if (currentHour === rowHour) {
+        // this removes the attribute of class and past
+        textBox.classList.remove("past");
+        // and adds the attribute of class and present
+        textBox.setAttribute("class", "present");
+      }
+      // if the current hour is less than the row hour then the colour is set to green, in the future
+      else if (currentHour < rowHour) {
+        // this removes the attribute of class and present
+        textBox.classList.remove("present");
+        // and sets the attribute of class and future
+        textBox.setAttribute("class", "future");
+      }
     }
     // this calls for the function of set colour code to be actioned
-setColorCode();
+    setColorCode();
+  });
+
+  // * Allows a user to enter an event when they click a timeblock
+
+
+  // * Saves the event in local storage when the save button is clicked in that timeblock.
+
+  // assign saveBtn event listener
+
+$(".saveBtn").on("click", function() {
+  var textValue = $(this).siblings(".description").val();
+  var timeKey = $(this).parent().attr("id");
+
+localStorage.setItem(timeKey, textValue);
+
 });
 
-// * Allows a user to enter an event when they click a timeblock
-    
+$("#9 .description").val(localStorage.getItem("9"));
 
-// * Saves the event in local storage when the save button is clicked in that timeblock.
-
-// assign saveBtn event listener
-$("saveBtn").on("click", function() {
-  var text = localStorage.getItem("#schedule");
-  var time = localStorage.getItem("#9");
-  window.localStorage.setItem("schedule", "9");
-})
-
-
-
-// * Persists events between refreshes of a page
+// Persists events between refreshes of a page
 
 });
