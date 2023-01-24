@@ -5,7 +5,7 @@ A simple calendar application that allows a user to save events for each hour of
 
  An application that allows a user to save events for each hour of the day by modifying starter code. This app runs in the browser and features dynamically updated HTML and CSS powered by jQuery. The [Moment.js](http://momentjs.com/) library is used to work with date and time.
 
- <!-- https://alanabf.github.io/Password-Generator/-->
+ https://alanabf.github.io/Daily-Planner-App/ 
 
 ## User Story
 
@@ -37,7 +37,7 @@ This application runs in the browser.
 
 ## Usage
 
-<!-- ![alt text](./assets/images/Random-Password-Generator.png) -->
+![alt text](./assets/images/Screenshot-Daily-Planner.png) 
 
 ## Technology Used
 
