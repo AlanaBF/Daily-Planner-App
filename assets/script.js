@@ -61,14 +61,16 @@ $(document).ready(function () {
     var time = $(this)
       .parent()
       .attr('id');
-    console.log("value, time");
+    console.log(value, time);
     // save in localStorage
     // localStorage.setItem("schedule", JSON.stringify(schedule));
-    localStorage.setItem("Schedule", time, value);
+    localStorage.setItem("Schedule time", time);
+    localStorage.setItem("Schedule text", value);
   });
 
 });
 
 
-localStorage.getItem("schedule");
+localStorage.getItem("Schedule time");
+localStorage.getItem("Schedule text");
 
