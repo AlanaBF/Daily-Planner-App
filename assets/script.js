@@ -49,14 +49,27 @@ $(document).ready(function () {
   // * Allows a user to enter an event when they click a timeblock
 
   // * Saves the event in local storage when the save button is clicked in that timeblock.
-var button = document.querySelector(".saveBtn");
-var input = document.getElementById("h9input");
 
-button.addEventListener("click", savePlan);
+  $('.saveBtn').on('click', function() {
+  // get nearby values
+  var value = $(this)
+    .siblings('.description')
+    .val();
+  var time = $(this)
+    .parent()
+    .attr('id');
 
-function savePlan() {
-  localStorage.setItem("schedule", input.value);
-};
+  // save in localStorage
+  localStorage.setItem(time, value);
+});
+ var button = document.querySelector(".saveBtn");
+ var input = document.getElementById("h9input");
+
+//  button.addEventListener("click", savePlan);
+
+//  function savePlan() {
+//    localStorage.setItem("schedule", input.value);
+//  };
 
   // Persists events between refreshes of a page
 });
@@ -64,3 +77,6 @@ function savePlan() {
 function getPlan() {
   return localStorage.getItem('schedule');
 };
+
+
+
