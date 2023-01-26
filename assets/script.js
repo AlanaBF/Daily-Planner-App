@@ -59,24 +59,12 @@ $(document).ready(function () {
     .val();
   var time = $(this)
     .parent()
-    .attr('#id');
+    .attr('id');
 console.log("value, time");
   // save in localStorage
-  localStorage.setItem(time, value);
+  localStorage.setItem("Schedule", time, value);
 });
 
-//  var input = document.getElementById("h9input");
-
-//  button.addEventListener("click", savePlan);
-
-//  function savePlan() {
-//    localStorage.setItem("schedule", input.value);
-//  };
-
-  // Persists events between refreshes of a page
 });
 
-//localStorage.getItem(time,value);
-
-
-
+localStorage.getItem("Schedule");
