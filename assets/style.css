@@ -10,7 +10,7 @@ textarea {
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10px;
+  padding: 0px;
 }
 
 .jumbotron {
@@ -23,6 +23,7 @@ textarea {
 
 .description {
   white-space: pre-wrap;
+  display: flex;
 }
 
 .time-block {
