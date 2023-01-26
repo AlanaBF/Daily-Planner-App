@@ -53,7 +53,6 @@ $(document).ready(function () {
 
   $('.saveBtn').on('click', function () {
     // get nearby values
-    console.log("click");
 
     var value = $(this)
       .siblings('textarea')
@@ -61,7 +60,7 @@ $(document).ready(function () {
     var time = $(this)
       .parent()
       .attr('id');
-    console.log(value, time);
+
     // save in localStorage
     // localStorage.setItem("schedule", JSON.stringify(schedule));
     localStorage.setItem("Schedule time", time);
@@ -69,7 +68,6 @@ $(document).ready(function () {
   });
 
 });
-
 
 localStorage.getItem("Schedule time");
 localStorage.getItem("Schedule text");
