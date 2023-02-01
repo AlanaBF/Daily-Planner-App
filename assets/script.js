@@ -14,9 +14,8 @@ $(document).ready(function () {
   function setColorCode() {
     var currentHour = parseInt(moment().format('HH'));
     // function to run through each time id attribute 
-    $('.time').each(function () {
+    $('.textBox').each(function () {
       var rowHour = parseInt($(this).attr('id'));
-      //var textBox = document.querySelector(".hour");
       // if the current hour is greater than the row hour in the planner it sets the colour to grey, in the past 
       if (rowHour < currentHour) {
         // this adds the attribute of class and past 
@@ -30,7 +29,6 @@ $(document).ready(function () {
       }
       // if the current hour is less than the row hour then the colour is set to green, in the future 
       else {
-
         // this removes the attribute of class and present 
         $(this).removeClass("past");
         $(this).removeClass("present");
@@ -41,105 +39,54 @@ $(document).ready(function () {
     });
   } setColorCode();
 
-  // * Allows a user to enter an event when they click a timeblock
-
   // * Saves the event in local storage when the save button is clicked in that timeblock.
 
   $(".saveBtn").on("click", function () {
 
     // Get nearby values of the description in JQuery
 
-    var text9 = $('#h9input').val();
+    var text9 = $('#9').val();
     localStorage.setItem('9am Schedule', text9);
 
-    if (typeof (Storage) !== "undefined") {
-      // Store
-      $("#h9input").val(localStorage.getItem("9am Schedule"));
-    } else {
-      $("#h9input").val("Undefined");
-    }
-
-    var text10 = $('#h10input').val();
+    var text10 = $('#10').val();
     localStorage.setItem('10am Schedule', text10);
 
-    if (typeof (Storage) !== "undefined") {
-      // Store
-      $("#h10input").val(localStorage.getItem("10am Schedule"));
-    } else {
-      $("#h10input").val("Undefined");
-    }
-
-    var text11 = $('#h11input').val();
+    var text11 = $('#11').val();
     localStorage.setItem('11am Schedule', text11);
 
-    if (typeof (Storage) !== "undefined") {
-      // Store
-      $("#h11input").val(localStorage.getItem("11am Schedule"));
-    } else {
-      $("#h11input").val("Undefined");
-    }
-
-    var text12 = $('#h12input').val();
+    var text12 = $('#12').val();
     localStorage.setItem('12pm Schedule', text12);
 
-    if (typeof (Storage) !== "undefined") {
-      // Store
-      $("#h12input").val(localStorage.getItem("12pm Schedule"));
-    } else {
-      $("#h12input").val("Undefined");
-    }
-
-    var text13 = $('#h13input').val();
+    var text13 = $('#13').val();
     localStorage.setItem('1pm Schedule', text13);
 
-    if (typeof (Storage) !== "undefined") {
-      // Store
-      $("#h13input").val(localStorage.getItem("1pm Schedule"));
-    } else {
-      $("#h13input").val("Undefined");
-    }
-
-    var text14 = $('#h14input').val();
+    var text14 = $('#14').val();
     localStorage.setItem('2pm Schedule', text14);
 
-    if (typeof (Storage) !== "undefined") {
-      // Store
-      $("#h14input").val(localStorage.getItem("2pm Schedule"));
-    } else {
-      $("#h14input").val("Undefined");
-    }
-
-    var text15 = $('#h15input').val();
+    var text15 = $('#15').val();
     localStorage.setItem('3pm Schedule', text15);
 
-    if (typeof (Storage) !== "undefined") {
-      // Store
-      $("#h15input").val(localStorage.getItem("3pm Schedule"));
-    } else {
-      $("#h15input").val("Undefined");
-    }
-
-    var text16 = $('#h16input').val();
+    var text16 = $('#16').val();
     localStorage.setItem('4pm Schedule', text16);
 
-    if (typeof (Storage) !== "undefined") {
-      // Store
-      $("#h16input").val(localStorage.getItem("4pm Schedule"));
-    } else {
-      $("#h16input").val("Undefined");
-    }
 
-    var text17 = $('#h17input').val();
+    var text17 = $('#17').val();
     localStorage.setItem('5pm Schedule', text17);
-
-    if (typeof (Storage) !== "undefined") {
-      // Store
-      $("#h17input").val(localStorage.getItem("5pm Schedule"));
-    } else {
-      $("#h17input").val("Undefined");
-    }
 
   });
 
-});
+  function loadFromLs() {
+    $('#9').val(localStorage.getItem("9am Schedule"));
+    $('#10').val(localStorage.getItem("10am Schedule"));
+    $('#11').val(localStorage.getItem("11am Schedule"));
+    $('#12').val(localStorage.getItem("12pm Schedule"));
+    $('#13').val(localStorage.getItem("1pm Schedule"));
+    $('#14').val(localStorage.getItem("2pm Schedule"));
+    $('#15').val(localStorage.getItem("3pm Schedule"));
+    $('#16').val(localStorage.getItem("4pm Schedule"));
+    $('#17').val(localStorage.getItem("5pm Schedule"));
+  }
 
+  loadFromLs();
+
+});

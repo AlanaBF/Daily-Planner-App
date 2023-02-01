@@ -37,7 +37,7 @@ This application runs in the browser.
 
 ## Usage
 
-![alt text](./assets/images/Screenshot-Daily-Planner.png) 
+![alt text](./assets/images/Daily-Planner.png) 
 
 ## Technology Used
 

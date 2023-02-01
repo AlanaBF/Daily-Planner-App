@@ -19,100 +19,66 @@
     <p class="lead">A simple calendar app for scheduling your work day</p>
     <p id="currentDay" class="lead"></p>
   </header>
+  <!-- Presents timeblocks for standard business hours when the user scrolls down. -->
   <div class="container">
-    <!-- Presents timeblocks for standard business hours when the user scrolls down. -->
 
-    <table class="table table-bordered">
-
-      <tbody>
-
-        <tr class="time" id="9">
-          <td class="hour">9AM</td>
-          <td class="description">
-            <textarea type=text class=textBox id="h9input"></textarea>
-          </td>
-          <td><button style="width: 100%" style="height: 100%" class="saveBtn">
-              <i class="far fa-save"></i></button>
-          </td>
-        </tr>
-        <tr class="time" id="10">
-          <td class="hour">10AM</td>
-          <td class="description">
-            <textarea type=text class=textBox id="h10input"></textarea>
-          </td>
-          <td><button style="width: 100%" style="height: 100%" class="saveBtn">
-              <i class="far fa-save"></i></button>
-          </td>
-        </tr>
-        <tr class="time" id="11">
-          <td class="hour">11AM</td>
-          <td class="description">
-            <textarea type=text class=textBox id="h11input"></textarea>
-          </td>
-          <td><button style="width: 100%" style="height: 100%" class="saveBtn">
-              <i class="far fa-save"></i></button>
-          </td>
-        </tr>
-        <tr class="time" id="12">
-          <td class="hour">12PM</td>
-          <td class="description">
-            <textarea type=text class=textBox id="h12input"></textarea>
-          </td>
-          <td><button style="width: 100%" style="height: 100%" class="saveBtn">
-              <i class="far fa-save"></i></button>
-          </td>
-        </tr>
-        <tr class="time" id="13">
-          <td class="hour">1PM</td>
-          <td class="description">
-            <textarea type=text class=textBox id="h13input"></textarea>
-          </td>
-          <td><button style="width: 100%" style="height: 100%" class="saveBtn">
-              <i class="far fa-save"></i></button>
-          </td>
-        </tr>
-        <tr class="time" id="14">
-          <td class="hour">2PM</td>
-          <td class="description">
-            <textarea type=text class=textBox id="h14input"></textarea>
-          </td>
-          <td><button style="width: 100%" style="height: 100%" class="saveBtn">
-              <i class="far fa-save"></i></button>
-          </td>
-        </tr>
-        <tr class="time" id="15">
-          <td class="hour">3PM</td>
-          <td class="description">
-            <textarea type=text class=textBox id="h15input"></textarea>
-          </td>
-          <td><button style="width: 100%" style="height: 100%" class="saveBtn">
-              <i class="far fa-save"></i></button>
-          </td>
-        </tr>
-        <tr class="time" id="16">
-          <td class="hour">4PM</td>
-          <td class="description">
-            <textarea type=text class=textBox id="h16input"></textarea>
-          </td>
-          <td><button style="width: 100%" style="height: 100%" class="saveBtn">
-              <i class="far fa-save"></i></button>
-          </td>
-        </tr>
-        <tr class="time" id="17">
-          <td class="hour">5PM</td>
-          <td class="description">
-            <textarea type=text class=textBox id="h17input"></textarea>
-          </td>
-          <td><button style="width: 100%" style="height: 100%" class="saveBtn">
-              <i class="far fa-save"></i></button>
-          </td>
-        </tr>
-
-      </tbody>
-
-    </table>
-
+    <div class="time row">
+      <div class="hour col-2">9AM</div>
+      <textarea class="textBox col-8" id="9"></textarea>
+      <button class="saveBtn col-2">
+        <i class="far fa-save"></i></button>
+    </div>
+    <div class="time row">
+      <div class="hour col-2">10AM</div>
+      <textarea class="textBox col-8" id="10"></textarea>
+      <button class="saveBtn col-2">
+        <i class="far fa-save"></i></button>
+    </div>
+    <div class="time row">
+      <div class="hour col-2">11AM</div>
+      <textarea class="textBox col-8" id="11"></textarea>
+      <button class="saveBtn col-2">
+        <i class="far fa-save"></i></button>
+    </div>
+    <div class="time row">
+      <div class="hour col-2">12PM</div>
+      <textarea class="textBox col-8" id="12"></textarea>
+      </td>
+      <td><button class="saveBtn col-2">
+          <i class="far fa-save"></i></button>
+    </div>
+    <div class="time row">
+      <div class="hour col-2">1PM</div>
+      <textarea class="textBox col-8" id="13"></textarea>
+      <button class="saveBtn col-2">
+        <i class="far fa-save"></i></button>
+    </div>
+    <div class="time row">
+      <div class="hour col-2">2PM</div>
+      <textarea class="textBox col-8" id="14"></textarea>
+      <button class="saveBtn col-2">
+        <i class="far fa-save"></i></button>
+    </div>
+    <div class="time row">
+      <div class="hour col-2">3PM</div>
+      <textarea class="textBox col-8" id="15"></textarea>
+      <button class="saveBtn col-2">
+        <i class="far fa-save"></i></button>
+    </div>
+    <div class="time row">
+      <div class="hour col-2">4PM</div>
+      <textarea class="textBox col-8" id="16"></textarea>
+      <button class="saveBtn col-2">
+        <i class="far fa-save"></i></button>
+    </div>
+    <div class="time row">
+      <div class="hour col-2">5PM</div>
+      <textarea class="textBox col-8" id="17"></textarea>
+      <button class="saveBtn col-2">
+        <i class="far fa-save"></i></button>
+    </div>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script type="text/javascript" src="./assets/script.js"></script>
