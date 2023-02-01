@@ -3,7 +3,7 @@ $(document).ready(function () {
   // * Displays the current day at the top of the calender when a user opens the planner.
   var timeDisplayEl = $('#currentDay');
   function displayTime() {
-    var rightNow = moment().format('dddd MMMM Do, YYYY [at] HH:mm:ss');
+    var rightNow = moment().format('dddd, MMMM Do');
     timeDisplayEl.text(rightNow);
   }
   setInterval(displayTime, 1000);
